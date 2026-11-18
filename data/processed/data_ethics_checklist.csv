@@ -1,10 +1,10 @@
 ﻿No,Butir Etika,Status,Bukti
-1,Tujuan pengumpulan data jelas,Ya,Data digunakan untuk analisis destinasi wisata Indonesia.
-2,Lisensi dataset telah diperiksa,Perlu verifikasi,Lisensi dataset perlu diperiksa pada halaman sumber Kaggle.
-3,Ketentuan portal sumber telah diperiksa,Perlu verifikasi,Ketentuan penggunaan portal Kaggle perlu ditinjau.
-4,Pemeriksaan data pribadi (PII),Perlu ditinjau,Terdapat kandidat PII yang perlu diperiksa secara manual.
-5,Risiko quasi-identifier telah dinilai,Ya,"Kolom City, Lat, Long, dan Coordinate telah diidentifikasi sebagai informasi lokasi."
-6,Kepatuhan robots.txt diperiksa,Ya,Halaman diperbolehkan diakses berdasarkan pemeriksaan robots.txt.
-7,"Request menggunakan timeout, User-Agent, dan delay",Ya,"Request menggunakan timeout, User-Agent, dan jeda antar-request."
-8,API key atau token tidak dicantumkan dalam notebook,Ya,API Open-Meteo yang digunakan tidak memerlukan API key untuk permintaan ini.
-9,Provenance dan atribusi sumber dicatat,Ya,"URL, tanggal akses, lisensi, dan MD5 dicatat dalam provenance."
+1,"Tujuan pengumpulan jelas dan relevan (akademik, sektor pariwisata)",Ya,UTS Data Acquisition & Management; topik destinasi wisata Indonesia dan cuaca
+2,Lisensi dataset jelas dan mengizinkan penggunaan akademik,BELUM DIISI,Lisensi Kaggle: ISI DARI DATA CARD KAGGLE. Open-Meteo: CC BY 4.0. Wikipedia: CC BY-SA 4.0. Data Card: https://www.kaggle.com/datasets/aprabowo/indonesia-tourism-destination
+3,Ketentuan portal sumber dibaca dan dipatuhi; asal data bukan platform terlarang,BELUM DIPASTIKAN,"ToS: https://www.kaggle.com/terms. Asal data: ISI keterangan sumber data dari Data Card (jika tidak dijelaskan, tulis: tidak dijelaskan). Bukan platform terlarang: Belum dipastikan"
+4,"Tidak ada PII langsung (nama orang, NIK, email, telepon, alamat pribadi)",Ya,"Pemindaian nama kolom dan pola nilai: 0 kandidat PII langsung. Data berisi tempat wisata, bukan individu"
+5,Risiko quasi-identifier / re-identifikasi dinilai,Ya,"Quasi-identifier lokasi: City, Coordinate, Lat, Long. Data agregat tempat wisata, risiko re-identifikasi rendah"
+6,robots.txt diperiksa dan halaman yang di-scrape diizinkan,Ya,https://en.wikipedia.org/robots.txt (status 200); can_fetch=True; bukti data/raw/robots_txt_evidence.txt dan docs/robots_check.json
+7,"Timeout, User-Agent berisi email kampus, dan jeda antar-request dipakai",Ya,UA: INSTIKI-BIFP243-UTS/1.0 (wiraastinarasmawan@gmail.com); timeout 20s; jeda 1.5s; retry dengan backoff di polite_get
+8,API key/token tidak ditulis di notebook,Ya,Open-Meteo tanpa API key; kredensial Kaggle API (jika dipakai) dari Colab Secrets
+9,"Atribusi sumber dan provenance (URL, tanggal akses, lisensi, MD5) dicatat",Ya,docs/provenance.csv (8 sumber); atribusi Open-Meteo dan Wikipedia dicantumkan
