@@ -1,29 +1,58 @@
 {
-    "judul": "Destinasi Wisata Indonesia",
-    "dibuat_utc": "2026-11-17T09:40:00.897223+00:00",
-    "email_kontak": "wiraastinarasmawan@gmail.com",
-    "sumber": [
-        "Indonesia Tourism Destination",
-        "Open-Meteo Historical API - Jakarta",
-        "Open-Meteo Historical API - Yogyakarta",
-        "Open-Meteo Historical API - Bandung",
-        "Open-Meteo Historical API - Semarang",
-        "Open-Meteo Historical API - Surabaya",
-        "Wikipedia robots.txt",
-        "Wikipedia - Daftar Kota Indonesia"
-    ],
-    "jumlah_baris_awal": 437,
-    "jumlah_baris_api": 1830,
-    "jumlah_baris_scraping": 95,
-    "jumlah_baris_hasil": 437,
-    "jumlah_kolom_hasil": 15,
-    "kunci_merge": [
-        "City"
-    ],
-    "validate": "many_to_one",
-    "metode_merge": "left",
-    "duplikasi_place_id": 0,
-    "md5_hasil": "9c9f3fbad688f5b9c596f46de528d1bb",
-    "file_hasil": "data/processed/merged_dataset.csv",
-    "catatan": "Dataset destinasi wisata digabungkan dengan data cuaca Open-Meteo dan informasi provinsi hasil web scraping."
+  "judul": "Destinasi Wisata Indonesia",
+  "dibuat_utc": "2026-11-18T08:45:26+00:00",
+  "email_kontak": "wiraastinarasmawan@gmail.com",
+  "sumber": [
+    "Kaggle - Indonesia Tourism Destination",
+    "Open-Meteo Historical API - Jakarta",
+    "Open-Meteo Historical API - Yogyakarta",
+    "Open-Meteo Historical API - Bandung",
+    "Open-Meteo Historical API - Semarang",
+    "Open-Meteo Historical API - Surabaya",
+    "Wikipedia robots.txt",
+    "Wikipedia - List of Indonesian cities by population"
+  ],
+  "jumlah_baris_berkas": 437,
+  "jumlah_baris_api": 1830,
+  "jumlah_baris_scraping": 95,
+  "jumlah_baris_hasil": 437,
+  "jumlah_kolom_hasil": 17,
+  "kolom": [
+    "Place_Id",
+    "Place_Name",
+    "Description",
+    "Category",
+    "City",
+    "Price",
+    "Rating",
+    "Time_Minutes",
+    "Coordinate",
+    "Lat",
+    "Long",
+    "suhu_rata2_c",
+    "curah_hujan_total_mm",
+    "durasi_sinar_matahari_rata2_detik",
+    "Province",
+    "Region",
+    "Population_2020"
+  ],
+  "kunci_merge": [
+    "City"
+  ],
+  "validate": "many_to_one",
+  "metode_merge": "left",
+  "duplikasi_place_id": 0,
+  "kolom_dibuang": [
+    "Unnamed: 11",
+    "Unnamed: 12"
+  ],
+  "satuan": {
+    "Price": "rupiah",
+    "Time_Minutes": "menit",
+    "suhu_rata2_c": "derajat Celsius",
+    "curah_hujan_total_mm": "mm per tahun 2024",
+    "durasi_sinar_matahari_rata2_detik": "detik per hari"
+  },
+  "file_hasil": "data/processed/merged_dataset.csv",
+  "md5_hasil": "263be11b9951426a0b6cb725ed23f832"
 }
