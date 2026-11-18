@@ -1,0 +1,13 @@
+{
+  "berkas_html": "data/raw/halaman_wikipedia.html",
+  "berkas_tabel": "data/processed/tabel_wikipedia_kota.csv",
+  "situs_sumber": "https://en.wikipedia.org/wiki/List_of_Indonesian_cities_by_population",
+  "waktu_scraping_utc": "2026-11-18T08:45:00+00:00",
+  "user_agent": "INSTIKI-BIFP243-UTS/1.0 (wiraastinarasmawan@gmail.com)",
+  "jeda_antar_request_detik": 1.5,
+  "timeout_detik": 20,
+  "jumlah_record": 95,
+  "robots_txt_mengizinkan": true,
+  "bukti_robots": "data/raw/robots_txt_evidence.txt",
+  "lisensi_konten": "CC BY-SA 4.0 (Wikipedia), atribusi wajib"
+}
