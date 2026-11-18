@@ -1,0 +1,10 @@
+﻿No,Butir Etika,Status,Bukti
+1,Tujuan pengumpulan data jelas,Ya,Data digunakan untuk analisis destinasi wisata Indonesia.
+2,Lisensi dataset telah diperiksa,Perlu verifikasi,Lisensi dataset perlu diperiksa pada halaman sumber Kaggle.
+3,Ketentuan portal sumber telah diperiksa,Perlu verifikasi,Ketentuan penggunaan portal Kaggle perlu ditinjau.
+4,Pemeriksaan data pribadi (PII),Perlu ditinjau,Terdapat kandidat PII yang perlu diperiksa secara manual.
+5,Risiko quasi-identifier telah dinilai,Ya,"Kolom City, Lat, Long, dan Coordinate telah diidentifikasi sebagai informasi lokasi."
+6,Kepatuhan robots.txt diperiksa,Ya,Halaman diperbolehkan diakses berdasarkan pemeriksaan robots.txt.
+7,"Request menggunakan timeout, User-Agent, dan delay",Ya,"Request menggunakan timeout, User-Agent, dan jeda antar-request."
+8,API key atau token tidak dicantumkan dalam notebook,Ya,API Open-Meteo yang digunakan tidak memerlukan API key untuk permintaan ini.
+9,Provenance dan atribusi sumber dicatat,Ya,"URL, tanggal akses, lisensi, dan MD5 dicatat dalam provenance."

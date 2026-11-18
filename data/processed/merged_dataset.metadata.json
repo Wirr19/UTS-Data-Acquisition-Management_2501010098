@@ -1,0 +1,29 @@
+{
+    "judul": "Destinasi Wisata Indonesia",
+    "dibuat_utc": "2026-11-17T09:40:00.897223+00:00",
+    "email_kontak": "wiraastinarasmawan@gmail.com",
+    "sumber": [
+        "Indonesia Tourism Destination",
+        "Open-Meteo Historical API - Jakarta",
+        "Open-Meteo Historical API - Yogyakarta",
+        "Open-Meteo Historical API - Bandung",
+        "Open-Meteo Historical API - Semarang",
+        "Open-Meteo Historical API - Surabaya",
+        "Wikipedia robots.txt",
+        "Wikipedia - Daftar Kota Indonesia"
+    ],
+    "jumlah_baris_awal": 437,
+    "jumlah_baris_api": 1830,
+    "jumlah_baris_scraping": 95,
+    "jumlah_baris_hasil": 437,
+    "jumlah_kolom_hasil": 15,
+    "kunci_merge": [
+        "City"
+    ],
+    "validate": "many_to_one",
+    "metode_merge": "left",
+    "duplikasi_place_id": 0,
+    "md5_hasil": "9c9f3fbad688f5b9c596f46de528d1bb",
+    "file_hasil": "data/processed/merged_dataset.csv",
+    "catatan": "Dataset destinasi wisata digabungkan dengan data cuaca Open-Meteo dan informasi provinsi hasil web scraping."
+}
