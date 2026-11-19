@@ -1,202 +1,45 @@
-# UTS Data Acquisition and Management (DAM)  
-## Indonesia Tourism Dataset
+# UTS Data Acquisition and Management – Indonesia Tourism
 
-Proyek ini merupakan tugas Ujian Tengah Semester (UTS) mata kuliah **Data Acquisition and Management (DAM)**. Proyek berfokus pada proses akuisisi, pengumpulan, pengolahan, penggabungan, dan pemeriksaan kualitas serta etika penggunaan data pariwisata di Indonesia.
-
-## Tujuan Proyek
-
-1. Mengumpulkan data destinasi wisata di Indonesia dari sumber data yang tersedia.
-2. Melakukan akuisisi data menggunakan metode yang sesuai.
-3. Mengumpulkan data pendukung cuaca dari Open-Meteo.
-4. Melakukan pembersihan dan pengolahan data.
-5. Menggabungkan data menjadi dataset yang siap dianalisis.
-6. Mendokumentasikan sumber data dan memeriksa aspek etika dalam proses akuisisi.
+## Deskripsi
+Proyek ini melakukan akuisisi, pemeriksaan, pengolahan, dan penggabungan data destinasi wisata Indonesia dengan data cuaca historis dan informasi wilayah pendukung.
 
 ## Sumber Data
+- Kaggle – Indonesia Tourism Destination: https://www.kaggle.com/datasets/aprabowo/indonesia-tourism-destination
+- Open-Meteo Historical API: https://open-meteo.com/
+- Wikipedia – List of Indonesian cities by population: https://en.wikipedia.org/wiki/List_of_Indonesian_cities_by_population
 
-Proyek ini menggunakan beberapa sumber data:
-
-| Sumber | Kegunaan |
-|---|---|
-| Kaggle – Indonesia Tourism Destination | Data utama destinasi wisata |
-| Wikipedia | Data pendukung terkait informasi pariwisata |
-| Open-Meteo API | Data cuaca untuk beberapa kota di Indonesia |
-
-**Dataset utama:**
-
-[Indonesia Tourism Destination – Kaggle](https://www.kaggle.com/datasets/aprabowo/indonesia-tourism-destination)
-
-**Dokumentasi Open-Meteo:**
-
-https://open-meteo.com/
-
-**Ketentuan penggunaan Kaggle:**
-
-https://www.kaggle.com/terms
-
-> Catatan: Status lisensi formal dan asal sebagian data Kaggle masih memerlukan verifikasi. Oleh karena itu, proyek tidak menganggap seluruh aspek lisensi telah terkonfirmasi.
-
-## Wilayah Pengumpulan Data
-
-Pengumpulan data cuaca dilakukan pada lima kota:
-
-- Jakarta
-- Bandung
-- Yogyakarta
-- Semarang
-- Surabaya
+## Cakupan
+- Dataset destinasi: sekitar 400 destinasi di Jakarta, Yogyakarta, Semarang, Bandung, dan Surabaya.
+- Cuaca historis: 1 Januari–31 Desember 2024 untuk lima kota tersebut.
+- Data pendukung wilayah: tabel kota dari Wikipedia.
 
 ## Struktur Repository
-
-```text
-UTS_DAM_Indonesia_Tourism/
-│
-├── UTS_DAM_Indonesia_Tourism.ipynb
-│
-├── data/
-│   ├── raw/
-│   │   ├── tourism_with_id.csv
-│   │   ├── halaman_wikipedia.html
-│   │   ├── openmeteo_Bandung.json
-│   │   ├── openmeteo_Jakarta.json
-│   │   ├── openmeteo_Semarang.json
-│   │   ├── openmeteo_Surabaya.json
-│   │   ├── openmeteo_Yogyakarta.json
-│   │   └── robots_txt_evidence.txt
-│   │
-│   └── processed/
-│       ├── data_ethics_checklist.csv
-│       └── merged_dataset.metadata.json
-│
-├── docs/
-│   ├── provenance.csv
-│   ├── robots_check.json
-│   └── scraping_meta.json
-│
-└── README.md
-```
-
-## Penjelasan Folder
-
-### 1. Notebook
-
-`UTS_DAM_Indonesia_Tourism.ipynb` merupakan notebook utama yang berisi kode program dan tahapan pengerjaan UTS, mulai dari akuisisi data hingga pengolahan dan pemeriksaan data.
-
-### 2. data/raw/
-
-Folder ini menyimpan data mentah yang diperoleh dari sumber data sebelum melalui proses pengolahan lebih lanjut.
-
-Contohnya:
-- File CSV dataset pariwisata.
-- File HTML hasil pengambilan halaman Wikipedia.
-- File JSON hasil pengambilan data cuaca Open-Meteo.
-- Bukti pemeriksaan robots.txt.
-
-### 3. data/processed/
-
-Folder ini menyimpan hasil pengolahan dan dokumentasi pemeriksaan data, seperti:
-- Checklist etika akuisisi data.
-- Metadata dataset hasil penggabungan.
-
-### 4. docs/
-
-Folder ini berisi dokumentasi proses akuisisi data, seperti:
-- `provenance.csv`: mencatat sumber dan asal data.
-- `robots_check.json`: menyimpan hasil pemeriksaan robots.txt.
-- `scraping_meta.json`: menyimpan metadata proses scraping.
+- `UTSDAM_perbaikan_final.ipynb`: satu notebook utama untuk seluruh tahapan soal.
+- `data/raw/`: sumber mentah CSV, JSON, HTML, dan bukti robots.txt.
+- `data/processed/`: hasil olahan, dataset gabungan, metadata, dan checklist etika.
+- `docs/`: provenance, bukti robots.txt, dan metadata scraping.
 
 ## Tahapan Pengerjaan
+1. Akuisisi dataset destinasi wisata dari Kaggle menggunakan KaggleHub.
+2. Identifikasi jenis, format, tipe kolom, cakupan, ukuran file, dan estimasi storage tahunan.
+3. Akuisisi cuaca harian Open-Meteo untuk lima kota selama tahun 2024.
+4. Pemeriksaan robots.txt dan ekstraksi tabel kota dari Wikipedia.
+5. Pembersihan data dan penggabungan berdasarkan kolom `City`.
+6. Validasi jumlah baris, keunikan `Place_Id`, dan kelengkapan hasil merge.
+7. Pemeriksaan etika dan pencatatan provenance setiap sumber.
 
-Secara umum, proses pengerjaan proyek dilakukan melalui tahapan berikut:
+## Catatan Lisensi dan Etika
+- Data Card Kaggle menampilkan `Data files © Original Authors`; pernyataan pada bagian Acknowledgements tidak dengan sendirinya membuktikan izin lisensi formal untuk penggunaan ulang.
+- Status lisensi dan asal asli dataset Kaggle ditandai perlu verifikasi sampai tersedia bukti yang memadai.
+- Data API Open-Meteo dilisensikan CC BY 4.0 dan memerlukan atribusi. Penggunaan layanan API publik gratis dibatasi untuk penggunaan nonkomersial; periksa ketentuan resmi sebelum penggunaan lain.
+- User-Agent menggunakan email kontak yang diisi pada konfigurasi notebook. Pastikan alamat dan kebijakan penggunaannya sesuai arahan dosen.
+- Tanggal unduh manual Kaggle tidak diisi tanpa bukti. Waktu unduh programatis melalui KaggleHub dicatat secara terpisah dari waktu pencatatan metadata.
 
-1. **Data Acquisition**  
-   Mengumpulkan data destinasi wisata dari dataset Kaggle serta data pendukung dari Wikipedia dan Open-Meteo.
+## Cara Menjalankan
+1. Buka notebook `UTSDAM_perbaikan_final.ipynb` di Google Colab.
+2. Jalankan semua cell dari atas ke bawah tanpa melewati cell.
+3. Pastikan dataset KaggleHub berhasil diunduh dan semua request sumber data berhasil.
+4. Periksa keluaran setiap cell dan file yang terbentuk pada folder `data/` dan `docs/`.
 
-2. **Data Collection**  
-   Menyimpan data hasil akuisisi dalam format CSV, HTML, dan JSON.
-
-3. **Data Cleaning**  
-   Memeriksa dan menyiapkan data agar dapat digunakan pada proses berikutnya.
-
-4. **Data Integration**  
-   Menggabungkan data yang diperlukan menjadi dataset hasil pengolahan.
-
-5. **Data Validation**  
-   Melakukan pemeriksaan terhadap struktur, kelengkapan, dan kualitas data.
-
-6. **Data Ethics Check**  
-   Memeriksa aspek etika akuisisi data, termasuk sumber data, lisensi, robots.txt, identifikasi informasi pribadi, serta dokumentasi provenance.
-
-## Pemeriksaan Etika Data
-
-Proyek ini menerapkan pemeriksaan etika untuk memastikan proses akuisisi dilakukan secara bertanggung jawab.
-
-Beberapa aspek yang diperiksa meliputi:
-
-- Tujuan penggunaan data.
-- Informasi lisensi dan ketentuan penggunaan sumber.
-- Asal-usul data.
-- Pemeriksaan potensi informasi pribadi.
-- Pemeriksaan quasi-identifier.
-- Pemeriksaan robots.txt.
-- Penggunaan timeout, User-Agent, dan jeda permintaan.
-- Pemeriksaan API key atau token.
-- Dokumentasi provenance.
-
-Beberapa aspek lisensi dan asal data masih berstatus **Perlu verifikasi**, sehingga tidak dianggap telah sepenuhnya terkonfirmasi.
-
-## Teknologi yang Digunakan
-
-- **Python** – bahasa pemrograman utama.
-- **Jupyter Notebook / Google Colab** – lingkungan pengerjaan notebook.
-- **Pandas** – pengolahan dan analisis data.
-- **Requests** – pengambilan data dari sumber web/API.
-- **JSON dan CSV** – format penyimpanan data.
-- **Git dan GitHub** – version control dan penyimpanan repository.
-
-## Cara Menjalankan Proyek
-
-1. Clone repository:
-
-   ```bash
-   git clone URL_REPOSITORY
-   ```
-
-2. Masuk ke direktori proyek:
-
-   ```bash
-   cd UTS_DAM_Indonesia_Tourism
-   ```
-
-3. Install library yang dibutuhkan jika belum tersedia:
-
-   ```bash
-   pip install pandas requests beautifulsoup4
-   ```
-
-4. Buka notebook menggunakan Jupyter Notebook atau Google Colab.
-
-5. Jalankan setiap cell secara berurutan sesuai tahapan pengerjaan.
-
-Pastikan file dataset berada pada lokasi folder yang sesuai dengan path yang digunakan dalam notebook.
-
-## Hasil Proyek
-
-Hasil dari proyek ini berupa:
-
-- Data mentah destinasi wisata dan data pendukung cuaca.
-- Data hasil pengolahan dan penggabungan.
-- Metadata dataset.
-- Dokumentasi sumber data atau provenance.
-- Bukti pemeriksaan robots.txt dan proses scraping.
-- Checklist pemeriksaan etika akuisisi data.
-
-## Penutup
-
-Proyek ini menunjukkan penerapan proses Data Acquisition and Management melalui pengumpulan, penyimpanan, pengolahan, integrasi, dan dokumentasi data pariwisata Indonesia. Selain menghasilkan dataset yang dapat digunakan untuk analisis lebih lanjut, proyek ini juga memperhatikan aspek kualitas data, transparansi sumber, dan etika dalam proses akuisisi data.
-
----
-
-**Mata Kuliah:** Data Acquisition and Management (DAM)  
-**Jenis Tugas:** Ujian Tengah Semester (UTS)  
-**Topik:** Indonesia Tourism Data Acquisition
+## Hasil Utama
+Hasil penggabungan disimpan pada `data/processed/merged_dataset.csv`, dengan informasi struktur dan validasi di `data/processed/merged_dataset.metadata.json`.
