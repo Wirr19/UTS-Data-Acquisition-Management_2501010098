@@ -1,4 +1,4 @@
-tanggal,temperature_2m_mean,precipitation_sum,sunshine_duration,lokasi,latitude,longitude
+﻿tanggal,temperature_2m_mean,precipitation_sum,sunshine_duration,lokasi,latitude,longitude
 2024-01-01,26.8,11.0,26267.57,Jakarta,-6.221441,106.856186
 2024-01-02,27.4,8.4,27591.26,Jakarta,-6.221441,106.856186
 2024-01-03,25.8,29.5,8244.02,Jakarta,-6.221441,106.856186
